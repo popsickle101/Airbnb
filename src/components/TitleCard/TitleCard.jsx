@@ -6,11 +6,6 @@ function TitleCard({ title, properties }) {
     <section className="title-card">
       <div className="title-card-header">
         <h2>{title}</h2>
-
-        <div className="title-card-buttons">
-          <button>{"<"}</button>
-          <button>{">"}</button>
-        </div>
       </div>
 
       <div className="property-list">

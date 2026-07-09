@@ -1,14 +1,17 @@
 import NavBar from "./Top/NavBar";
-import CategoryNav from "./Top/CategoryNav";
 import SearchBar from "./Top/SearchBar";
+import CategoryNav from "./Top/CategoryNav";
 
-function Top() {
+function Top({ selectedCategory, setSelectedCategory }) {
   return (
-    <header>
+    <>
       <NavBar />
-      <CategoryNav />
       <SearchBar />
-    </header>
+      <CategoryNav
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
+    </>
   );
 }
 

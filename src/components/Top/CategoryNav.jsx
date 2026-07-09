@@ -1,4 +1,4 @@
-function CategoryNav() {
+function CategoryNav({ selectedCategory, setSelectedCategory }) {
   const categories = [
     { icon: "🗺️", title: "All" },
     { icon: "🏠", title: "Homes" },
@@ -8,10 +8,13 @@ function CategoryNav() {
 
   return (
     <div className="categories">
-      {categories.map((item, index) => (
+      {categories.map((item) => (
         <div
-          className={`category ${index === 0 ? "active" : ""}`}
           key={item.title}
+          className={`category ${
+            selectedCategory === item.title ? "active" : ""
+          }`}
+          onClick={() => setSelectedCategory(item.title)}
         >
           <span>{item.icon}</span>
           <p>{item.title}</p>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Top from "./components/Top";
 import TitleCard from "./components/TitleCard/TitleCard";
 
@@ -25,15 +26,52 @@ const properties = [
   },
 ];
 
+const sections = [
+  {
+    category: "Homes",
+    title: "Popular homes in Kolkata",
+    properties,
+  },
+  {
+    category: "Homes",
+    title: "Available in Mumbai",
+    properties,
+  },
+  {
+    category: "Experiences",
+    title: "Popular experiences",
+    properties,
+  },
+  {
+    category: "Services",
+    title: "Popular services",
+    properties,
+  },
+];
+
 function App() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   return (
     <>
-      <Top />
-
-      <TitleCard
-        title="Popular homes in Kolkata"
-        properties={properties}
+      <Top
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
       />
+
+      {sections
+        .filter(
+          (section) =>
+            selectedCategory === "All" ||
+            section.category === selectedCategory
+        )
+        .map((section) => (
+          <TitleCard
+            key={section.title}
+            title={section.title}
+            properties={section.properties}
+          />
+        ))}
     </>
   );
 }
