@@ -145,3 +145,90 @@ header {
 .search-btn:hover {
   background: #e31c5f;
 }
+
+/* =======================
+   Search Field Active
+======================= */
+
+.search-field.active {
+  background: #ebebeb;
+  border-radius: 32px;
+}
+
+.search-field.active small {
+  color: #222;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #222;
+  outline: none;
+  font-family: inherit;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+/* =======================
+   Date Inputs
+======================= */
+
+.date-inputs {
+  display: flex;
+  gap: 8px;
+}
+
+.date-input {
+  width: 130px;
+}
+
+/* =======================
+   Guest Counter
+======================= */
+
+.guest-counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.counter-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #b0b0b0;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 18px;
+  color: #222;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.counter-btn:hover {
+  border-color: #222;
+}
+
+.counter-value {
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* =======================
+   No Results
+======================= */
+
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: #717171;
+  font-size: 18px;
+}
